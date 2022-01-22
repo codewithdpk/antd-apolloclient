@@ -10,7 +10,7 @@ export const RouterList = () => {
       <Route path="/" exact>
         <Dashboard />
       </Route>
-      <Route path="/missions" exact>
+      <Route path="/missions">
         <MissionsPage />
       </Route>
     </Switch>

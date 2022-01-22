@@ -3,11 +3,11 @@ import {
   setMissionsFailed,
   setMissionsRequest,
   setMissionsSuccess,
-} from "../../../redux/actions/DashboardAction";
+} from "../../../redux/actions/MissionsActions";
 
 const initialState = { loading: false, missions: [], errorMessage: "" };
 
-export const DashboardReducer = createReducer(initialState, (builder) => {
+export const MissionsReducer = createReducer(initialState, (builder) => {
   builder
     .addCase(setMissionsRequest, (state, action) => {
       state.loading = true;

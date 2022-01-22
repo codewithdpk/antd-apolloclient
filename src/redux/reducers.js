@@ -1,6 +1,8 @@
 import { combineReducers } from "redux";
-import { DashboardReducer } from "../views/Pages/Dashboard";
+import { SliderRedcuer } from "../components/shared/SliderMenu";
+import { MissionsReducer } from "../views/Pages/Missions";
 
 export const rootReducer = combineReducers({
-  dashboard: DashboardReducer,
+  missions: MissionsReducer,
+  slider: SliderRedcuer,
 });

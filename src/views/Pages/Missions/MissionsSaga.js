@@ -1,20 +1,21 @@
 import { all, fork, put, call, takeLatest } from "redux-saga/effects";
 import {
   setMissionsFailed,
-  setMissionsRequest,
   setMissionsSuccess,
-} from "../../../redux/actions/DashboardAction";
+  SET_MISSIONS_REQUEST,
+} from "../../../redux/actions/MissionsActions";
 import { getAllMissions } from "../../../services";
 
 function* onFetchMissions() {
   try {
-    const { response, error } = yield call(getAllMissions);
-    yield put(setMissionsSuccess(response.data));
+    const { error, data } = yield call(getAllMissions);
+    console.log("=>", data);
+    yield put(setMissionsSuccess(data));
   } catch (e) {
     yield put(setMissionsFailed(e));
   }
 }
 
 export function* fetchMissions() {
-  yield takeLatest(setMissionsRequest, onFetchMissions);
+  yield takeLatest(SET_MISSIONS_REQUEST, onFetchMissions);
 }

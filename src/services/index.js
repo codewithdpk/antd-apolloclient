@@ -1,1 +1,1 @@
-export { getAllMissions } from "./MissionServices";
+export { getAllMissions } from "./MissionsServices";
